@@ -1,26 +1,62 @@
 import React from 'react';
 
-const Header = () => {
+const list = [
+    {
+        title: 'Item 1',
+        description: ''
+    },
+    {
+        title: 'Item 2',
+        description: ''
+    },
+    {
+        title: 'Item 3',
+        description: ''
+    }
+];
+
+const Example = () => {
     return (
-        <div className="flex items-center justify-center h-screen bg-gray-100">
-            <div className="mx-auto my-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 px-4 py-12 lg:max-w-7xl lg:grid-cols-2 lg:px-8 h-full">
-                <div>
-                    <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Hello world!</h2>
-                    <p className="mt-4 text-gray-500">
-                        Dictum. Integer lectus mattis nisi leo, cursus malesuada dictum. Amet venenatis pulvinar sed consectetur et risus
-                        libero, vitae non vestibulum faucibus. Mattis amet lacinia amet vel molestie dictumst.
-                    </p>
+        <>
+            <div className="max-w-md mx-auto bg-white shadow-lg rounded-lg overflow-hidden mt-16">
+                <div className="px-4 py-2">
+                    <h1 className="text-gray-800 font-bold text-2xl ">To-do list</h1>
                 </div>
-                <div>
-                    <img
-                        src="https://images.unsplash.com/photo-1702560030602-1b780380b892?q=80&w=2999&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                        alt="Card"
-                        className="rounded-lg"
-                    />
-                </div>
+                <form className="w-full mx-auto px-4 py-2">
+                    <div className="flex items-center border-b-2 border-teal-500 py-2">
+                        <input
+                            className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+                            type="text"
+                            placeholder="Add a task"
+                        />
+                        <button
+                            className="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded"
+                            type="button">
+                            Add
+                        </button>
+                    </div>
+                </form>
+
+                <ul className="divide-y divide-gray-200 px-4">
+                    {list.map((item, index) => (
+                        <li className="py-4" key={index}>
+                            <div className="flex items-center">
+                                <input
+                                    id="todo1"
+                                    name="todo1"
+                                    type="checkbox"
+                                    className="h-4 w-4 text-teal-100 focus:ring-teal-500 border-gray-300 rounded"
+                                />
+                                <label htmlFor="todo1" className="ml-3 block text-gray-900">
+                                    <span className="text-lg font-medium">{item.title}</span>
+                                </label>
+                            </div>
+                        </li>
+                    ))}
+                </ul>
             </div>
-        </div>
+        </>
     );
 };
 
-export default Header;
+export default Example;
