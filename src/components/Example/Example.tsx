@@ -1,6 +1,6 @@
-import './App.css';
+import React from 'react';
 
-function App() {
+const Header = () => {
     return (
         <div className="flex items-center justify-center h-screen bg-gray-100">
             <div className="mx-auto my-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 px-4 py-12 lg:max-w-7xl lg:grid-cols-2 lg:px-8 h-full">
@@ -21,6 +21,6 @@ function App() {
             </div>
         </div>
     );
-}
+};
 
-export default App;
+export default Header;
